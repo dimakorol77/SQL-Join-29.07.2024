@@ -1,0 +1,44 @@
+SELECT
+    s1.SNAME AS sname,
+    s2.SNAME AS bossname
+FROM
+    SELLERS s1
+LEFT JOIN
+    SELLERS s2 ON s1.BOSS_ID = s2.SELL_ID;
+////////////////////////////////////////////////////////
+SELECT
+    c.CNAME AS cname,
+    o.AMT AS amt
+FROM
+    CUSTOMERS c
+JOIN
+    ORDERS o ON c.CUST_ID = o.CUST_ID
+WHERE
+    o.AMT > 1000;
+////////////////////////////////////////////////////////
+SELECT
+    c.CNAME AS cname,
+    s.SNAME AS sname
+FROM
+    ORDERS o
+JOIN
+    CUSTOMERS c ON o.CUST_ID = c.CUST_ID
+JOIN
+    SELLERS s ON o.SELL_ID = s.SELL_ID
+WHERE
+    c.CITY != s.CITY;
+////////////////////////////////////////////////////////
+    SELECT
+    s.SNAME AS sname,
+    c.CNAME AS cname,
+    s.CITY AS city
+FROM
+    ORDERS o
+JOIN
+    CUSTOMERS c ON o.CUST_ID = c.CUST_ID
+JOIN
+    SELLERS s ON o.SELL_ID = s.SELL_ID
+WHERE
+    c.CITY = s.CITY;
+
+//////////////////////////////////////////////////////////
